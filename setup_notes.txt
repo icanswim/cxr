@@ -1,0 +1,12 @@
+#instructions for setting up folders and conda enviornment
+
+##create a new cxr conda enviornment and folders
+git clone https://github.com/icanswim/cosmosis.git
+git clone https://github.com/icanswim/cxr.git
+cd cxr
+mkdir data
+mkdir logs
+mkdir models
+conda create --name cxr --file requirements.txt
+conda activate cxr
+jupyter lab

@@ -24,10 +24,14 @@ class Ranzcr(CDataset):
         data = {}
         for file in os.listdir(image_dir):
             targets = df.loc[[file[:-4]]].to_numpy()
-            target = np.reshape(targets, -1)[:-1].astype(np.int64)
+            target = np.reshape(targets, -1)[:-1].astype(np.float64)
 
             if target_type == 'ETT':
+                #convert onehots into int category keys
                 target = np.reshape(target[:3], -1)
+                target = np.where(target == 1)[0] + 1
+                if len(target) == 0:
+                    target = 0
             if target_type == 'NG':
                 target = np.reshape(target[3:7], -1)
             if target_type == 'CATH':

@@ -23,5 +23,3 @@ https://arxiv.org/abs/1705.02315
 
 VinDr-CXR: An open dataset of chest X-rays with radiologist's annotations  
 https://arxiv.org/abs/2012.15029  
-
-
